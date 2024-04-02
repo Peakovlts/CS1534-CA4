@@ -37,4 +37,12 @@ io.on("connection", function (socket) {
       io.emit("chat message", data);
   });
 
+  socket.on("typing", function (userName) {
+  io.emit("typing", userName); // Broadcast typing notification
+  });
+
+  socket.on("stop typing", function (userName) {
+    // Clear any existing typing notification for this user
+    io.emit("stop typing", userName); // Broadcast stop typing notification
+  });
 });

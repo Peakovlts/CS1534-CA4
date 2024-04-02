@@ -48,14 +48,27 @@ newUserConnected();
 //when a new user event is detected
 socket.on("new user", function (data) {
   data.map(function (user) {
+          displayNotification(`${user} joined the chat`);
           return addToUsersBox(user);
       });
 });
 
 //when a user leaves
 socket.on("user disconnected", function (userName) {
+  displayNotification(`${userName} left the chat`);
   document.querySelector(`.${userName}-userlist`).remove();
 });
+
+socket.on("typing", function (userName) {
+  // Display a typing indicator for the user
+  displayNotification(`${userName} is typing...`);
+});
+
+socket.on("stop typing", function (userName) {
+  // Display a typing indicator for the user
+  displayNotification('');
+});
+
 
 
 const inputField = document.querySelector(".message_form__input");
@@ -108,3 +121,37 @@ messageForm.addEventListener("submit", (e) => {
 socket.on("chat message", function (data) {
   addNewMessage({ user: data.nick, message: data.message });
 });
+
+// Function to display notifications
+function displayNotification(message) {
+  const notificationElement = document.createElement('div');
+  notificationElement.classList.add('notification');
+  notificationElement.textContent = message;
+  document.querySelector('.content').appendChild(notificationElement);
+
+  // Remove the notification after 3 seconds
+  setTimeout(() => {
+    notificationElement.remove();
+  }, 3000);
+}
+
+// Track typing status
+let isTyping = false;
+let typingTimeout;
+
+const handleTyping = () => {
+  if (!isTyping) {
+    isTyping = true;
+    socket.emit("typing", userName); // Emit typing event
+  }
+
+  clearTimeout(typingTimeout);
+  typingTimeout = setTimeout(() => {
+    isTyping = false;
+    socket.emit("stop typing", userName); // Emit stop typing event (new line)
+  }, 1000); // Adjust timeout as needed
+};
+
+inputField.addEventListener("keydown", handleTyping);
+
+
