@@ -49,7 +49,7 @@
     <br>
     <hr>
 
-    <div class="content" style="color: white;">
+    <div class="content changa-font" style="color: white;">
       <div class="messages__history"></div>
         <div class="fallback"></div>
       <div class="inbox__messages">
@@ -59,12 +59,33 @@
 
       <form class="message_form">
           <input type="text" class="message_form__input" placeholder="Type a message" />
-          <button class="message_form__button" type="submit">
+          <button class="button d-flex btn justify-content-center" type="submit">
             Enter
           </button>
         </form>
     </div>
   </div>
+
+  <nav class="navbar navbar-expand-sm navbar-custom navbar-dark">
+  <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav mx-auto"> <!-- mx-auto class to center align links -->
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active" href="chat.html">Chat</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
 
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/client.js"></script>

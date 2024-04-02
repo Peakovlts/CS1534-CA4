@@ -1,19 +1,19 @@
-body {
+body { /* Changes the backdrop to black */
     background-color: #160121 !important;
 }
 
-.navbar-custom {
+.navbar-custom { /*changes color of navbar */
   background-color: #3C0A44;
 }
 
-.stick-no-bills-logo {
+.stick-no-bills-logo { /*Custom font used for certain headers found off Google fonts api*/
   font-family: "Stick No Bills", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
 }
 
-.changa-heading {
+.changa-font { /*Custom font used for most body text and headers*/
   font-family: "Changa", sans-serif;
   font-optical-sizing: auto;
   font-weight: 350;
@@ -21,21 +21,18 @@ body {
   color: #ffff;
 }
 
-.heading{ 
+.heading{ /*Formats the intial header of the about and home pages */
   border-radius: 10px;
   text-align: center;
+  color: #ffff 
 }
 
-h2 {
-  color: #ffff !important;
-}
-
-.nav-item{ 
+.nav-item{ /*Formats the links on the navbar by spacing them out more to fill the full bar a bit more */
   padding-left: 50px;
   padding-right: 50px;
 }
 
-.button {
+.button { /*Modifies the bootstrap buttons to change the color of the buttons to match the color palette */
   background-color: #AC5180 !important;
   border-color: #AC5180 !important;
   color: #ffff !important;
