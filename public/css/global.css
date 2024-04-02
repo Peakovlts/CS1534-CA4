@@ -1,0 +1,47 @@
+body {
+    background-color: #160121 !important;
+}
+
+.navbar-custom {
+  background-color: #3C0A44;
+}
+
+.stick-no-bills-logo {
+  font-family: "Stick No Bills", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.changa-heading {
+  font-family: "Changa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+  color: #ffff;
+}
+
+.heading{ 
+  border-radius: 10px;
+  text-align: center;
+}
+
+h2 {
+  color: #ffff !important;
+}
+
+.nav-item{ 
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.button {
+  background-color: #AC5180 !important;
+  border-color: #AC5180 !important;
+  color: #ffff !important;
+}
+
+.button:hover {
+  background-color: #F1A5AD !important;
+  color: #ffff !important;
+}
